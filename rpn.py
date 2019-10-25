@@ -7,9 +7,16 @@ def calculate(arg):
 			arg2 = stack.pop()
 			result = arg1 + arg2
 			stack.append(result)
+		elif token == '-':
+			arg1 = stack.pop()
+			arg2 = stack.pop()
+			result = arg2 - arg1
+			stack.append(result)
 		else:
 			stack.append(int(token))
-		print(stack)
+		#print(stack)
+	if len(stack) != 1:
+		raise TypeError("malfored input")
 	return(stack.pop())
 
 def main():
